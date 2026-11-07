@@ -1,0 +1,5 @@
+check,all_records,excluding_speculative
+frontier energy doubling (months),6.900519222465268,7.072447437622713
+"BAU 2030 largest-run energy, median (GWh)",19557.717195849655,20328.917242144136
+"BAU 2030 90% interval (GWh), excl. speculative",,5418-100991
+n speculative records removed (frontier),,5

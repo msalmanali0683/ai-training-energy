@@ -1,0 +1,2 @@
+comparison,n,median_ratio,mean_abs_log10_err,within_2x,within_3x,mape_pct,median_ape_pct
+literature-prior MFU vs calibrated MFU (all models),290,1.0,0.05905523433268074,1.0,1.0,11.727649540737321,0.0

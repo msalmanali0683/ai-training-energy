@@ -1,0 +1,11 @@
+sha256,bytes,file,source_url,downloaded_utc
+08932763076fa781634371dd1b75d8156f76592710c7e984836ed56a663d5688,16120810,ember/release_generation_yearly_global.csv,"https://files.ember-energy.org/public-downloads/generation/outputs/release_generation_yearly_global.csv",2026-11-07
+ad8e74ac176501dd41d5d3cba1aab2ba45eda221b2b130a7a64dd2416c7f76ca,560,epoch/ai_models/README.md,"https://epoch.ai/data/ai_models.zip",2026-11-07
+c3f056957c99c9b42a5e617e586625880239ab041cb03ea62c5b7890050ffd57,6933189,epoch/ai_models/all_ai_models.csv,"https://epoch.ai/data/ai_models.zip",2026-11-07
+ab4eab0301974bbdd94d8edfbb5672369bd3d683f8b96355b7a376abfbcda754,373593,epoch/ai_models/frontier_ai_models.csv,"https://epoch.ai/data/ai_models.zip",2026-11-07
+78cb142e4272d7f342c990beb688f14ad18042ef1e850cf3b4a91cc14519a8f5,1111431,epoch/ai_models/large_scale_ai_models.csv,"https://epoch.ai/data/ai_models.zip",2026-11-07
+2a5e2b87fac6a37acecf296168d3fb08f0b70456617841c26816232263da5900,2281009,epoch/ai_models/notable_ai_models.csv,"https://epoch.ai/data/ai_models.zip",2026-11-07
+008a04444757ab1ad1ff10c61a6985ec9506fdf820a8c8fbd0de5c12ff21c173,639,epoch/ml_hardware/README.md,"https://epoch.ai/data/ml_hardware.zip",2026-11-07
+1ada4881ecd7539fbc319d2face9962bbc73aa4096c1e4a6b8ea9d489cc0dc0f,104153,epoch/ml_hardware/ml_hardware.csv,"https://epoch.ai/data/ml_hardware.zip",2026-11-07
+62225000e11b42e88380facaf80783897e97a6e388a5c472a3fd6b381fd85174,166070,owid/carbon-intensity-electricity.csv,"https://ourworldindata.org/grapher/carbon-intensity-electricity.csv?v=1&csvType=full&useColumnShortNames=true",2026-11-07
+f90fa8fa935fddb47f71bbe6408e8ed0b763148e62348b1bce0d93833750ef83,1715,owid/carbon-intensity-electricity.metadata.json,"https://ourworldindata.org/grapher/carbon-intensity-electricity.metadata.json",2026-11-07

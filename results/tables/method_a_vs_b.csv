@@ -1,0 +1,265 @@
+model,organization,pub_date,domain,params,flop_total,dataset_size,hardware_raw,chips,hours,mfu_reported,epoch_power_w,cost_usd2023,num_format,epoch_frontier,org_type_raw,country_raw,confidence,accessibility,base_model,ft_flop,compute_notes,year_frac,multi_hardware,hw,manufacturer,hw_type,hw_release,tdp_w,f_tensor16,f_fp8,f_fp4,f_fp32,f_tf32,f_fp16,hw_matched,peak_flops,peak_source,consumer,tpu,org_type,country,ci_g_kwh,ci_source,is_finetune,flop_run,compute_hw_derived,can_a,can_b,method,implied_mfu,inconsistent,independent_ab,top10_year,frontier,flop,energy_A_mwh,energy_B_mwh,log10_ratio_B_A,A_in_B_90pi
+TC-DNN-BLSTM-DNN,Carnegie Mellon University (CMU),2015-04-06,Speech,18413568.0,1.9410192e+17,29160000.0,NVIDIA Tesla K20m,1.0,51.0,,263.01387537165505,,,False,Academia,United States of America,Confident,Unreleased,,,"""51 hours in wall clock time with a NVIDIA Tesla K20 GPU""
+K20 FLOPs: 3524000000000
+Compute: 0.3*51*60*60*3524000000000=194101919999999970= 1.94e17
+",2015.2600958247776,False,NVIDIA Tesla K20c,NVIDIA,GPU,2012-11-12,225.0,,,,3520000000000.0,,,True,3520000000000.0,f_fp32,False,False,Academia,United States,504.9,United States:2015,False,1.9410192e+17,False,True,True,A,0.3003409090909091,False,True,True,True,1.9410192e+17,0.018578092006692738,0.01618572118017481,-0.059869054519837525,True
+EnhanceNet,Max Planck Institute for Intelligent Systems,2016-12-23,Vision,814464.0,1.3079231999999998e+17,9830400000.0,NVIDIA Tesla K40c,1.0,24.0,,282.4218009310853,,,False,Academia,Germany,Confident,Open weights (unrestricted),,,"Compute: 0.3*24*60*60*5046000000000=130792319999999980
+K40 FLOPs: 5046000000000
+""We trained all models for a maximum of 24 hours on an Nvidia K40 GPU""",2016.977412731006,False,NVIDIA Tesla K40s,NVIDIA,GPU,2013-11-22,245.0,,,,5046000000000.0,,,True,5046000000000.0,f_fp32,False,False,Academia,Germany,498.3,Germany:2016,False,1.3079231999999998e+17,False,True,True,A,0.3,False,True,True,True,1.3079231999999998e+17,0.009564276189654504,0.008331539219283425,-0.059926865813658595,True
+RetinaNet-R101,Facebook AI Research,2017-08-07,Vision,53000000.0,2.065392e+18,115000.0,NVIDIA M40,8.0,35.0,,4174.823263154792,,FP32,False,Industry,"United States of America,France",Confident,,,,"""We use synchronized SGD over 8 GPUs with a total of 16 images per minibatch (2 images per GPU). Unless otherwise specified, all models are trained for 90k iterations with an initial learning rate of 0.01, which is then divided by 10 at 60k and again at 80k iterations. We use horizontal image flipping as the only form of data augmentation unless otherwise noted. Weight decay of 0.0001 and momentum of 0.9 are used. The training loss is the sum the focal loss and the standard smooth L1 loss used for box regression [10]. Training time ranges between 10 and 35 hours for the models in Table 1e.""
+
+NVIDIA M40 GPU
+
+35*60**2*0.3*8*6.83E+12 = 2.07e18",2017.5968514715948,False,NVIDIA M40,NVIDIA,GPU,2015-11-10,250.0,,,,6832000000000.0,,,True,6832000000000.0,f_fp32,False,False,Industry,United States,469.02,United States:2017,False,2.065392e+18,False,True,True,A,0.2999121779859485,False,True,False,False,2.065392e+18,0.11432818907056663,0.09945166417489691,-0.06054126964214515,True
+AlphaZero,DeepMind,2017-12-05,Games,,1.0600000001e+20,3520000000.0,"Google TPU v2,Google TPU v1",5064.0,24.0,,,229918.6146969874,,False,Industry,United Kingdom,Likely,Unreleased,,,"The Go version (there were versions trained individually for three different games) was trained for 34 hours using
+5k TPUv1 for data generation
+64 TPUv2 for parameter updating
+I used the PCD chip entries for the lowest precision numerical format we had for each, which was INT8 for TPUv1 and FP16 for TPUv2
+
+Direct training compute: 1.06e20 FLOPs",2017.9253935660504,True,Google TPU v2,Google,TPU,2017-05-01,280.0,46000000000000.0,,,3000000000000.0,,,True,46000000000000.0,f_tensor16,False,True,Industry,United Kingdom,302.2,United Kingdom:2017,False,1.0600000001e+20,False,True,True,A,0.0052667244143124,False,True,True,True,1.0600000001e+20,31.834618791652655,0.48723348436278086,-1.8151625268448672,False
+ResNeXt-101 32x48d,Facebook,2018-05-02,Vision,829000000.0,8.74395e+21,940000000.0,NVIDIA V100,336.0,496.0,,209159.05867416784,134077.42688552555,,True,Industry,United States of America,Confident,Open weights (non-commercial),,,"Table 6: 153e9 mult-adds.
+Section 2.4: ""minibatches of 8,064 images"".
+
+Compute = 2 * 3 * mult-adds * dataset size = 2 * 3 * 153e9 * 9525e6 = 8.74e21 FLOP
+
+Likely trained on V100s, since Facebook had just upgraded their Big Basin GPU cluster to V100s as of March 2018. The previous iteration of Big Basin had 32 clusters of 8xP100s, while Big Basin v2 had 42 clusters of 8xV100s, which matches the 336 GPUs used in this paper.",2018.331279945243,False,NVIDIA V100,NVIDIA,GPU,2017-06-21,300.0,125000000000000.0,,,15670000000000.0,,31330000000000.0,True,125000000000000.0,f_tensor16,False,False,Industry,United States,462.61,United States:2018,False,8.74395e+21,False,True,True,A,0.1165934619815668,False,True,True,True,8.74395e+21,81.3902744850178,27.512609592901054,-0.47104072760179777,False
+GPT-1,OpenAI,2018-06-01,Language,117000000.0,1.7578125e+19,1333333333.0,NVIDIA Quadro P600,8.0,720.0,,663.5535559333689,,,False,Industry,United States of America,Likely,Open weights (unrestricted),,,"COMPUTE = FORWARD COMPUTE PER TOKEN * 3 BACKWARD FORWARD ADJUSTMENT * EPOCHS * DATASET SIZE
+
+""We train for 100 epochs on minibatches of 64 randomly sampled, contiguous sequences of 512 tokens.""
+
+Authors of ""AI and Memory Wall"" estimated model's training compute as 57,000 PFLOPS = 5.7*10^19 FLOP
+(https://github.com/amirgholami/ai_and_memory_wall)",2018.413415468857,False,NVIDIA Quadro P600,NVIDIA,GPU,2017-02-07,40.0,,,,1196000000000.0,,18680000000.0,True,1196000000000.0,f_fp32,True,False,Industry,United States,462.61,United States:2018,False,1.7578125e+19,False,True,True,A,0.7087880463814568,False,True,True,True,1.7578125e+19,0.3057654258412179,0.6235815827955343,0.3095049036292007,False
+BERT-Large,Google,2018-10-11,Language,340000000.0,2.85e+20,2649900000.0,Google TPU v2,64.0,96.0,0.2801,37049.92852412132,1751.4770087736404,,False,Industry,United States of America,Confident,Open weights (unrestricted),,,"more info here https://docs.google.com/document/d/1B8x6XYcmB1u6Tmq3VcbAtj5bzhDaj2TcIPyK6Wpupx4/edit?usp=sharing
+285000000000000000000 = 2.85 × 10^20
+
+""AI and Memory Wall"" paper (https://github.com/amirgholami/ai_and_memory_wall) made an estimation of 250,000 PFLOPS = 2.5*10^20 FLOP",2018.7748117727583,False,Google TPU v2,Google,TPU,2017-05-01,280.0,46000000000000.0,,,3000000000000.0,,,True,46000000000000.0,f_tensor16,False,True,Industry,United States,462.61,United States:2018,False,2.85e+20,False,True,True,A,0.2801130359299517,False,True,True,True,2.85e+20,1.611427658611763,1.611502654891948,2.021171262495179e-05,True
+StyleGAN,Nvidia,2018-12-12,Image generation,26200000.0,3.93e+16,50000000.0,NVIDIA V100,8.0,168.0,,4955.197627044293,,,False,Industry,United States of America,Confident,Open weights (non-commercial),,,6 * 26.2M * 25M ~= 39300000000000000,2018.9445585215608,False,NVIDIA V100,NVIDIA,GPU,2017-06-21,300.0,125000000000000.0,,,15670000000000.0,,31330000000000.0,True,125000000000000.0,f_tensor16,False,False,Industry,United States,462.61,United States:2018,False,3.93e+16,False,True,True,A,6.498015873015873e-05,False,True,False,False,3.93e+16,0.6584498981886847,0.00012364683984238134,-3.726339713681357,False
+Megatron-BERT,Nvidia,2019-09-17,Language,3900000000.0,2.2e+22,6960000000.0,NVIDIA Tesla V100S PCIe 32 GB,512.0,374.0,,262640.30207328824,171818.64196707975,FP16,True,Industry,United States of America,Confident,Unreleased,,,"A third-party source: https://lair.lighton.ai/akronomicon/ claims 5.7e22
+
+The authors report experimenting on 1 V100 GPU and achieving throughput of 39 TFLOPS which is 30% of the peak throughput. Therefore the GPU has a peak throughput of 130 TFLOPS so it is specifically the NVIDIA V100S PCIe.
+https://images.nvidia.com/content/technologies/volta/pdf/volta-v100-datasheet-update-us-1165301-r5.pdf
+
+Param-based calculation:
+6ND = 6*3.9e9*(2e6+1e4)*1024*512 = 2.5e22 FLOP
+
+1024 is the batch size, 512 is the sequence length (not explicitly stated but they say non-specified hyperparameters follow cited papers).
+
+Time-based calculation:
+The 8.3B GPT-like arch took 2.1 days per epoch on 512 GPUs, batch size 512. An epoch was 68.5k iterations with sequence length 1024.
+
+Halving the model size should ~halve the iteration time.
+Doubling the batch size should ~double the iteration time.
+Halving the sequence length should ~quarter the iteration time (quadratic scaling).
+
+Hence 3.1e-5 days/iteration * 2 * 1/2 * 1/4 = 7.8e-6 days/iteration.
+
+2e6 iterations => seems like 15.6 days training.
+
+On 512 GPUs they achieve a peak throughput of 15.1 PFLOPS.
+C=15.1 PFLOPS * 58 days = 2.0e22 FLOP.
+
+If we disregard the Akronomicon estimate and aggregate our two, geometric mean is 2.2e22 FLOP",2019.7091033538672,False,NVIDIA Tesla V100S PCIe 32 GB,NVIDIA,GPU,2019-11-26,250.0,130000000000000.0,,,16350000000000.0,,32710000000000.0,True,130000000000000.0,f_tensor16,False,False,Industry,United States,439.45,United States:2019,False,2.2e+22,False,True,True,A,0.2454908245349421,False,True,True,True,2.2e+22,77.64592900162783,55.318169927336996,-0.14725088642231562,True
+T5-11B,Google,2019-10-23,Language,11000000000.0,3.3e+22,34000000000.0,Google TPU v3,512.0,481.9,,472373.69114573154,78464.68282814459,,True,Industry,United States of America,Confident,Open weights (unrestricted),,,"https://arxiv.org/ftp/arxiv/papers/2104/2104.10350.pdf
+Table 4, 4.05e22
+
+update: 3.3e22 per FLAN paper from Google 
+https://arxiv.org/pdf/2210.11416.pdf
+
+6ND rule suggests somewhat more FLOPs:
+6 * 1T * 11B = 6.6e22",2019.807665982204,False,Google TPU v3,Google,TPU,2018-05-18,450.0,123000000000000.0,,,,,,True,123000000000000.0,f_tensor16,False,True,Industry,United States,439.45,United States:2019,False,3.3e+22,False,True,True,A,0.302050417526379,False,True,True,True,3.3e+22,104.44740914140453,91.19493161890905,-0.058926969584026205,True
+Noisy Student (L2),"Carnegie Mellon University (CMU),Google",2019-11-11,Vision,480000000.0,2.612e+22,81000000.0,Google TPU v3,1024.0,144.0,,944347.7271739373,45609.73119622589,FP32,True,"Academia,Industry","United States of America,United States of America",Confident,Unreleased,,,"""Our largest model, EfficientNet-L2, needs to be trained for 6 days on a Cloud TPU v3 Pod, which has 2048 cores, if the unlabeled batch size is 14x the labeled batch size""
+TPU v3 gets 1.23e14 FLOP/s per chip, with 2 cores per chip
+
+1024 * 1.23e14 * 6 * 24 * 3600 * 0.4 = 2.612e22",2019.85968514716,False,Google TPU v3,Google,TPU,2018-05-18,450.0,123000000000000.0,,,,,,True,123000000000000.0,f_tensor16,False,True,Mixed,United States,439.45,United States:2019,False,2.612e+22,False,True,True,A,0.4000397172663856,False,True,True,True,2.612e+22,62.35317394205075,72.4272197995206,0.0650432495183488,True
+OpenAI Five,OpenAI,2019-12-13,Games,159000000.0,6.7e+22,454164480000.0,NVIDIA P100,1536.0,7104.0,,786395.8382790724,4328311.470477086,,True,Industry,United States of America,Confident,Unreleased,,,"""770±50 PFlops/s·days of compute"" for the model that played against world champions. They did a single training run that took 10 months.
+
+While the model was playing against world champions, they continued training for a few days, so that the resulting model used even more training compute: 820±50 PFlops/s·days.
+
+Finally, they also trained a Rerun model with 150±5 PFlops/s·days of compute.
+
+Source: Dota 2 with Large Scale Deep Reinforcement Learning
+https://arxiv.org/abs/1912.06680
+
+You cannot multiply the hardware quantity by training time to get the quantity of GPU-hours! Page 5: "" the number of GPUs (up to 1536 at the peak)""
+
+From this NVIDIA blogpost, it appears they were using P100s:
+https://developer.nvidia.com/blog/ai-learns-to-play-dota-2-with-human-precision/#:~:text=AI%20Learns%20to%20Play%20Dota,The%20neural",2019.947296372348,False,NVIDIA P100,NVIDIA,GPU,2016-04-05,250.0,,,,9300000000000.0,,18700000000000.0,True,9300000000000.0,f_fp32,False,False,Industry,United States,439.45,United States:2019,False,6.7e+22,False,True,True,A,0.1833982489994474,False,True,True,True,6.7e+22,4442.151030597832,2359.581469997526,-0.2747583432703723,False
+Meena,Google Brain,2020-01-28,Language,2600000000.0,1.12e+23,53333333333.333336,Google TPU v3,1024.0,720.0,,942708.8086440804,214809.9121350844,,True,Industry,United States of America,Confident,Unreleased,,,"https://arxiv.org/ftp/arxiv/papers/2104/2104.10350.pdf
+Table 4
+
+In the paper: ""We trained our best model for 30 days on a TPUv3 Pod (2,048 TPU cores) on the Meena dataset containing 40B words (or 61B BPE tokens) [...] by the end of training, the model had traversed the full
+training set 164 times (or epochs) and observed a total of about 10T tokens""
+
+Hardware: 30 * 24 * 3600 * (2048/2) * 1.23e14 * 0.3 = 9.794e22
+Ops counting: 6 * 10T * 2.6B = 1.56E23
+Geometric mean: sqrt(9.79e22*1.56E23) = 1.24e23, very close to the figure in the link above.",2020.0739219712525,False,Google TPU v3,Google,TPU,2018-05-18,450.0,123000000000000.0,,,,,,True,123000000000000.0,f_tensor16,False,True,Industry,United States,411.73,United States:2020,False,1.12e+23,False,True,True,A,0.343066220014052,False,True,True,True,1.12e+23,312.68483338547077,311.5230622443337,-0.0016166132532393386,True
+UnifiedQA,"Allen Institute for AI,University of Washington",2020-05-02,Language,11000000000.0,1.65e+19,,Google TPU v3,8.0,36.0,,7349.34790019072,59.12208690735248,,False,"Research collective,Academia","United States of America,United States of America",Confident,Open weights (unrestricted),T5-11B,3.8e+19,"A.2: ""In the experiments, we use v3-8 TPUs for T5 models... pretraining UNIFIEDQA approximately takes about 36 hours on T5(11B)""
+(Note that v3-8 refers to 8 TPUv3 cores, or 4 TPUv3 chips. From the JAX github repo: ""In a TPU v3-8 you have 4 chips, 2 cores per chip, and each core has 16GB of HBM. So this looks to JAX like 8 devices with 16GB each."")
+
+4 * 1.23e14 * 36 * 3600 * 0.3 = 1.91e19
+
+Alternatively, input (ouput) size of 512 (100) tokens, batch size of 8, trained for 100k steps. Input tokens only need the forward pass.
+((2 * 11B * 512 * 8) + (6 * 11B * 100 * 8)) * 100k = 1.43e19
+
+Took geometric mean of these estimates:
+sqrt(1.91e19*1.43e19) = 1.65e19",2020.33401779603,False,Google TPU v3,Google,TPU,2018-05-18,450.0,123000000000000.0,,,,,,True,123000000000000.0,f_tensor16,False,True,Mixed,United States,411.73,United States:2020,True,3.8e+19,False,True,True,A,0.2979775168122051,False,True,False,False,3.8e+19,0.12162272703647269,0.10474371481642322,-0.06488676455192999,True
+GPT-3 175B (davinci),OpenAI,2020-05-28,Language,174600000000.0,3.14e+23,238000000000.0,NVIDIA Tesla V100 DGXS 32 GB,10000.0,355.2,0.1966,5100759.605963441,2116866.242839016,,True,Industry,United States of America,Confident,API access,,,"Table D.1
+https://arxiv.org/abs/2005.14165",2020.405201916496,False,NVIDIA Tesla V100 DGXS 32 GB,NVIDIA,GPU,2018-03-27,250.0,125000000000000.0,,,15670000000000.0,,31330000000000.0,True,125000000000000.0,f_tensor16,False,False,Industry,United States,411.73,United States:2020,False,3.14e+23,False,True,True,A,0.1964464464464464,False,True,True,True,3.14e+23,1442.0035350533258,1440.877264620751,-0.0003393363048089701,True
+GShard (dense),Google,2020-06-30,Language,2300000000.0,4.765e+22,346666666667.0,Google TPU v3,1024.0,1008.0,,939481.3420790088,266200.0315979732,FP32,True,Industry,United States of America,Confident,Unreleased,,,"Trained for a total of 235.5 TPU v3 core-years.
+Hardware estimate: 235.5 * 365.25 * 24 * 3600 * (1.23e14 / 2) * 0.3 = 1.371e23
+
+Footnote 10 indicates 300k steps and 4M tokens/step -> 1.2T tokens
+Arithmetic estimate: 6 * 2.3B * 1.2T = 1.656e22 FLOPs
+
+Geometric mean: sqrt(1.371e23 * 1.656e22) = 4.765e22",2020.495550992471,False,Google TPU v3,Google,TPU,2018-05-18,450.0,123000000000000.0,,,,,,True,123000000000000.0,f_tensor16,False,True,Industry,United States,411.73,United States:2020,False,4.765e+22,False,True,True,A,0.1042544986203417,False,True,True,True,4.765e+22,433.74475403102326,132.0220451424268,-0.5165877791259146,False
+CPM-Large,"Tsinghua University,Beijing Academy of Artificial Intelligence / BAAI",2020-12-01,Language,2600000000.0,2.6052e+20,16700000000.0,NVIDIA V100,64.0,336.0,,39011.038545758856,7340.099044719796,,False,"Academia,Academia","China,China",Confident,Open weights (unrestricted),,,"source: https://lair.lighton.ai/akronomicon/
+
+archived: https://github.com/lightonai/akronomicon/tree/main/akrodb
+
+6*2600000000 parameter *16700000000 tokens=2.605200e+20",2020.9171800136887,False,NVIDIA V100,NVIDIA,GPU,2017-06-21,300.0,125000000000000.0,,,15670000000000.0,,31330000000000.0,True,125000000000000.0,f_tensor16,False,False,Academia,China,606.29,China:2020,False,2.6052e+20,False,True,True,A,0.026922123015873,False,True,False,False,2.6052e+20,10.505403251319786,0.8190972148737873,-1.1080772782840107,False
+CLIP (ViT L/14@336px),OpenAI,2021-01-05,"Multimodal,Vision,Language,Video",370000000.0,1.05e+22,400000000.0,NVIDIA V100,256.0,288.0,,155922.57638758916,24638.518413409514,FP16,False,Industry,United States of America,Confident,Open weights (unrestricted),,,"https://docs.google.com/document/d/156miAJkFN9DDX06C3s03UDsretCtymCKiGDddLBCgQE/edit?usp=sharing
+
+",2021.0109514031485,False,NVIDIA V100,NVIDIA,GPU,2017-06-21,300.0,125000000000000.0,,,15670000000000.0,,31330000000000.0,True,125000000000000.0,f_tensor16,False,False,Industry,United States,423.78,United States:2021,False,1.05e+22,False,True,True,A,0.3164785879629629,False,True,False,False,1.05e+22,35.7923000243888,32.930604831642455,-0.03618989977698482,True
+Switch,Google,2021-01-11,Language,1571000000000.0,8.22e+22,86400000000.0,Google TPU v3,1024.0,648.0,,935410.4639575824,145100.89767585773,BF16,True,Industry,United States of America,Confident,Open weights (unrestricted),,,"Table 4
+https://arxiv.org/ftp/arxiv/papers/2104/2104.10350.pdf",2021.0273785078716,False,Google TPU v3,Google,TPU,2018-05-18,450.0,123000000000000.0,,,,,,True,123000000000000.0,f_tensor16,False,True,Industry,United States,423.78,United States:2021,False,8.22e+22,False,True,True,A,0.2797623341781257,False,True,True,True,8.22e+22,277.9888859729271,227.26343825970568,-0.08749786030686667,True
+PLUG,Alibaba,2021-04-19,Language,27000000000.0,3.5997696e+22,60000000000.0,NVIDIA A100,128.0,840.0,,103707.91685199105,108672.69136370042,,False,Industry,China,Confident,Hosted access (no API),,,128 Nvidia A100 for 35 days,2021.2956878850105,False,NVIDIA A100,NVIDIA,GPU,2020-03-01,400.0,312000000000000.0,,,19500000000000.0,156000000000000.0,77970000000000.0,True,312000000000000.0,f_tensor16,False,False,Industry,China,599.05,China:2021,False,3.5997696e+22,False,True,True,A,0.2980769230769231,False,True,False,False,3.5997696e+22,69.87025268194843,59.88467274019178,-0.06697663330891128,True
+DeBERTa,Microsoft,2021-06-10,Language,1500000000.0,2.588e+22,20800000000.0,NVIDIA V100,256.0,720.0,,155381.83775233384,6682.2289986716,FP16,False,Industry,United States of America,Confident,Open weights (unrestricted),,,"Table 8: 16 DGX-2 nodes (x16 V100s each) for 30 days
+16 * 16 * 1.3e14 * 30 * 24 * 3600 * 0.3 = 2.588e22",2021.438056125941,False,NVIDIA V100,NVIDIA,GPU,2017-06-21,300.0,125000000000000.0,,,15670000000000.0,,31330000000000.0,True,125000000000000.0,f_tensor16,False,False,Industry,United States,423.78,United States:2021,False,2.588e+22,False,True,True,A,0.3120177469135802,False,True,False,False,2.588e+22,90.11834317510977,81.45535419302789,-0.04389356215918574,True
+Megatron-Turing NLG 530B,"Microsoft,Nvidia",2021-10-11,Language,530000000000.0,8.586e+23,270000000000.0,NVIDIA A100 SXM4 80 GB,4480.0,770.0,,3615658.868639838,3848505.625647173,BF16,True,"Industry,Industry","United States of America,United States of America",Confident,Unreleased,,,"https://www.lesswrong.com/posts/bGuMrzhJdENCo8BxX/nvidia-and-microsoft-releases-530b-parameter-transformer?commentId=HSJSNspKp94tFcSCx
+
+source: https://lair.lighton.ai/akronomicon/
+9938 PF-days * 3600 * 24 * 10^15  = 8.586432e+23
+
+6ND estimate: 6 * 530B * 270B = 8.586000e+23",2021.7748117727583,False,NVIDIA A100 SXM4 80 GB,NVIDIA,GPU,2020-11-16,400.0,312000000000000.0,,,19490000000000.0,156000000000000.0,77970000000000.0,True,312000000000000.0,f_tensor16,False,False,Industry,United States,423.78,United States:2021,False,8.586e+23,False,True,True,A,0.2215975988297417,False,True,True,True,8.586e+23,2249.758510912279,1442.345635427107,-0.19306655875046,True
+Gopher (280B),DeepMind,2021-12-08,Language,280000000000.0,6.31e+23,300000000000.0,Google TPU v3,4096.0,920.0,0.378,3714163.007906485,640616.8522346151,BF16,True,Industry,United Kingdom,Confident,Unreleased,,,"Table A26
+6.31E+08 Train PFLOPs",2021.933607118412,False,Google TPU v3,Google,TPU,2018-05-18,450.0,123000000000000.0,,,,,,True,123000000000000.0,f_tensor16,False,True,Industry,United Kingdom,267.1,United Kingdom:2021,False,6.31e+23,False,True,True,A,0.3781585915100546,False,True,True,True,6.31e+23,1595.5501409960536,1596.2195608538007,0.0001821718868941526,True
+LaMDA,Google,2022-02-10,Language,137000000000.0,3.55e+23,2080000000000.0,Google TPU v3,1024.0,1385.0,,927218.301405043,229949.98625999544,,False,Industry,United States of America,Confident,Unreleased,,,"""The total FLOPS is 56.5% * 123 TFLOPS/s * 1024 chips * 57.7 days
+= 3.55E+23""
+From https://arxiv.org/pdf/2201.08239.pdf p.18
+",2022.109514031485,False,Google TPU v3,Google,TPU,2018-05-18,450.0,123000000000000.0,,,,,,True,123000000000000.0,f_tensor16,False,True,Industry,United States,410.39,United States:2022,False,3.55e+23,False,True,True,A,0.5652896198787499,False,True,True,True,3.55e+23,595.1707922068485,977.9493399912643,0.2156747477096771,True
+OPT-175B,Meta AI,2022-05-02,Language,175000000000.0,4.3e+23,180000000000.0,NVIDIA A100 SXM4 80 GB,1024.0,793.5,,822708.6888139298,733634.637,FP16,False,Industry,United States of America,Confident,Open weights (non-commercial),,,"https://github.com/facebookresearch/metaseq/blob/main/projects/OPT/chronicles/final_update.md
+
+""As of yesterday, at 12:46pm PST on January 6, our 175B model finally completed its training run on 300B tokens. This required ~4.30E+23 FLOPs of compute""",2022.331279945243,False,NVIDIA A100 SXM4 80 GB,NVIDIA,GPU,2020-11-16,400.0,312000000000000.0,,,19490000000000.0,156000000000000.0,77970000000000.0,True,312000000000000.0,f_tensor16,False,False,Industry,United States,410.39,United States:2022,False,4.3e+23,False,True,True,A,0.4711557255173355,False,True,True,True,4.3e+23,528.4291977548238,718.1556677341231,0.1332317862532458,True
+UL2,"Google Research,Google Brain",2022-05-10,Language,20000000000.0,1.2e+23,1000000000000.0,Google TPU v4,512.0,744.0,0.2992518703,349588.9061965891,126785.76203549476,BF16,False,"Industry,Industry","United States of America,United States of America",Confident,Open weights (unrestricted),,,"Trained on 1T tokens
+20B * 1T * 6 = 1.2e23 
+
+Second source: Section 5.1 says model was trained on 512 TPUv4 chips, and took slightly over 1 month
+512 * 2.75e14 * 31 * 24 * 3600 * 0.3 = 1.13e23",2022.35318275154,False,Google TPU v4,Google,TPU,2021-05-20,340.0,275000000000000.0,,,,,,True,275000000000000.0,f_tensor16,False,True,Industry,United States,410.39,United States:2022,False,1.2e+23,False,True,True,A,0.318202183121538,False,True,False,False,1.2e+23,121.32513557988469,129.00812606562306,0.02666628153602834,True
+AlexaTM 20B,Amazon,2022-08-02,Language,19750000000.0,2.04374016e+23,1319000000000.0,NVIDIA A100,128.0,2880.0,,102628.10792703854,267943.21130997164,BF16,False,Industry,United States of America,Confident,API access,,,"Training throughput is reported as 154 TFLOP/s - see p.5 of the paper.
+""We relied on an internal and optimized version of DeepSpeed that we have since open-sourced (Chiu & Zheng, 2022) to obtain training throughput of up to 154 TFLOPS/GPU on 16 AWS p4d.24xlarge compute instances.""
+
+Accelerator compute days are reported as 15,360 days - see Table 17 on p.18 of the paper.",2022.583162217659,False,NVIDIA A100,NVIDIA,GPU,2020-03-01,400.0,312000000000000.0,,,19500000000000.0,156000000000000.0,77970000000000.0,True,312000000000000.0,f_tensor16,False,False,Industry,United States,410.39,United States:2022,False,2.04374016e+23,False,True,True,A,0.4935897435897436,False,True,False,False,2.04374016e+23,240.2203857884528,343.3721208511408,0.15515517081632166,True
+Flan-PaLM 540B,Google,2022-10-20,Language,540000000000.0,2.540000000001e+24,1400000000.0,Google TPU v4,512.0,37.0,0.1892,348322.23114529514,,,True,Industry,United States of America,Confident,Unreleased,PaLM (540B),5.6e+21,"0.2% greater than Palm 540B, which used 2.5e24",2022.7994524298424,False,Google TPU v4,Google,TPU,2021-05-20,340.0,275000000000000.0,,,,,,True,275000000000000.0,f_tensor16,False,True,Industry,United States,410.39,United States:2022,True,5.6e+21,False,True,True,A,0.2985940485940486,False,True,False,False,5.6e+21,6.0549838064463986,9.55593091404986,0.19816001530005084,False
+U-PaLM (540B),Google,2022-10-20,Language,540000000000.0,2.53e+24,1300000000.0,Google TPU v4,512.0,120.0,,348322.23114529514,,,True,Industry,United States of America,Confident,Unreleased,PaLM (540B),4e+21,"""The total number of extra tokens we train on for the 540B
+model is approximately 1.3 Billion which constitutes 0.16% extra computation... Training an U-PaLM 540B model only consumes 512 TPUv4 chips and finishes in about 5 days which is considered to be lightweight.""
+
+original PaLM was 2.527e+24. adding 0.16% is ~2.53e24",2022.7994524298424,False,Google TPU v4,Google,TPU,2021-05-20,340.0,275000000000000.0,,,,,,True,275000000000000.0,f_tensor16,False,True,Industry,United States,410.39,United States:2022,True,4e+21,False,True,True,A,0.0657617845117845,False,True,False,False,4e+21,19.535070572467784,3.6998657173352605,-0.7226290223976731,False
+Vega v2,"Wuhan University,JD Explore Academy,Shanghai AI Lab,Nanyang Technological University,Washington University in St Louis,Chongqing University of Posts and Telecommunications,University of Sydney",2022-12-04,Language,6000000000.0,7.76e+22,6439999999.0,NVIDIA A100,320.0,720.0,,255862.7534697245,,,False,"Academia,Academia,Academia,Academia,Academia,Academia","China,China,Singapore,United States of America,China,Australia",Confident,Unreleased,,,"Pretraining took 1 month on 320 A100 (Section 3.1)
+720*60*60*320*312000000000000*0.3=7.7635584e+22",2022.9226557152635,False,NVIDIA A100,NVIDIA,GPU,2020-03-01,400.0,312000000000000.0,,,19500000000000.0,156000000000000.0,77970000000000.0,True,312000000000000.0,f_tensor16,False,False,Academia,China,586.75,China:2022,False,7.76e+22,False,True,True,A,0.2998624960430515,False,True,False,False,7.76e+22,150.3679782821149,130.0393125810167,-0.06308069557161951,True
+BLIP-2 (Q-Former),Salesforce Research,2023-01-30,"Vision,Language",1480000000.0,1.20000000001e+21,2322000000.0,NVIDIA A100 SXM4 40 GB,16.0,200.0,,12776.908953102382,1960.8225382725807,FP16,False,Industry,United States of America,Confident,Open weights (unrestricted),,,https://www.wolframalpha.com/input?i=312+teraFLOPS+*+16+*+200+hours+*+0.33,2023.0793976728269,False,NVIDIA A100 SXM4 40 GB,NVIDIA,GPU,2020-05-14,400.0,312000000000000.0,,,19490000000000.0,156000000000000.0,77970000000000.0,True,312000000000000.0,f_tensor16,False,False,Industry,United States,392.89,United States:2023,False,1.20000000001e+21,False,True,True,A,0.3338675213703036,False,True,False,False,1.20000000001e+21,2.082883674497728,2.0116593057299026,-0.015110585444935288,True
+LLaMA-65B,Meta AI,2023-02-24,Language,65200000000.0,5.5e+23,1400000000000.0,NVIDIA A100,2048.0,500.0,0.4746,1634534.091472035,578026.3043,,False,Industry,United States of America,Confident,Open weights (non-commercial),,,1.4e12 tokens * 6.52e10 parameters * 6 FLOP/token/parameter = 5.5e23 FLOP,2023.1478439425048,False,NVIDIA A100,NVIDIA,GPU,2020-03-01,400.0,312000000000000.0,,,19500000000000.0,156000000000000.0,77970000000000.0,True,312000000000000.0,f_tensor16,False,False,Industry,United States,392.89,United States:2023,False,5.5e+23,False,True,True,A,0.4781956686253561,False,True,False,False,5.5e+23,666.9894137128459,672.0426646785687,0.0032779041873817836,True
+GPT-4 (Mar 2023),OpenAI,2023-03-15,"Multimodal,Language,Vision",1800000000000.0,2.1e+25,5416666666666.667,NVIDIA A100 SXM4 40 GB,25000.0,2280.0,0.34,19944368.12599428,37334304.976625234,,True,Industry,United States of America,Likely,API access,,,"90% CI: 8.2E+24 to 4.4E+25
+
+NOTE: this is a rough estimate based on public information, much less information than most other systems in the database.
+
+Calculation and confidence intervals here: https://colab.research.google.com/drive/1O99z9b1I5O66bT78r9ScslE_nOj5irN9?usp=sharing",2023.1998631074607,False,NVIDIA A100 SXM4 40 GB,NVIDIA,GPU,2020-05-14,400.0,312000000000000.0,,,19490000000000.0,156000000000000.0,77970000000000.0,True,312000000000000.0,f_tensor16,False,False,Industry,United States,392.89,United States:2023,False,2.1e+25,False,True,True,A,0.328010196431249,False,True,True,True,2.1e+25,37140.13162256573,35830.41726176539,-0.015591572766557251,True
+BloombergGPT,"Bloomberg,Johns Hopkins University",2023-03-30,Language,50558868480.0,2.36e+23,569000000000.0,NVIDIA A100,512.0,1270.0,0.246,408324.2395754059,369586.1352802876,BF16,False,"Industry,Academia","United States of America,United States of America",Confident,Unreleased,,,"2.36e23 per Table 4
+
+(using our usual hardware method, 512 A100s over 53 days would be 512 * 312 teraFLOP/s * 53 * 24 * 3600 * 0.3 = 2.19e23)",2023.240930869268,False,NVIDIA A100,NVIDIA,GPU,2020-03-01,400.0,312000000000000.0,,,19500000000000.0,156000000000000.0,77970000000000.0,True,312000000000000.0,f_tensor16,False,False,Mixed,United States,392.89,United States:2023,False,2.36e+23,False,True,True,A,0.3231329357067546,False,True,False,False,2.36e+23,422.489538942841,554.9605082276156,0.11844611914920979,True
+InstructBLIP,"Salesforce Research,Hong Kong University of Science and Technology (HKUST),Nanyang Technological University",2023-05-11,"Multimodal,Language,Vision",13000000000.0,1.94e+20,,NVIDIA A100 SXM4 40 GB,16.0,36.0,,12748.20334097663,,FP16,False,"Industry,Academia,Academia","United States of America,Hong Kong,Singapore",Confident,Open weights (non-commercial),Vicuna-13B v0,1.9408896e+20,"""All models are trained utilizing 16 Nvidia A100 (40G) GPUs and are completed within 1.5 days.""
+16 * 3.12e14 * 1.5 * 24 * 3600 * 0.3 = 1.94e20",2023.3559206023272,False,NVIDIA A100 SXM4 40 GB,NVIDIA,GPU,2020-05-14,400.0,312000000000000.0,,,19490000000000.0,156000000000000.0,77970000000000.0,True,312000000000000.0,f_tensor16,False,False,Mixed,United States,392.89,United States:2023,True,1.9408896e+20,False,True,True,A,0.3,False,True,False,False,1.9408896e+20,0.37752030859905766,0.32860561762761553,-0.060265335765295636,True
+xTrimoPGLM -100B,"Tsinghua University,BioMap Research",2023-07-06,Biology,100000000000.0,6.2e+23,275000000000.0,NVIDIA A100 SXM4 40 GB,768.0,3912.0,,611151.12765533,1823415.258,FP16,False,"Academia,Industry","China,China",Confident,Unreleased,,,"""xTrimoPGLM-100B is trained on a cluster of 96 DGX-A100 GPU (8×40G) servers in FP16 precision from January 18 to June 30, 2023. During this time, xTrimoPGLM-100B has consumed 1 trillion tokens from the dataset consisting of Uniref90 and ColAbFoldDB. As of the current date, xTrimoPGLM-100B continues its pre-training process to pass through as many tokens as possible""
+
+6 * 100 billion params * 1T tokens = 6e23
+
+8*96 * 312 trillion * 163 days * 24 * 3600 * 0.3 ~= 1e24
+
+directly given in the paper (Table 9, or Table 4 in new version): 6.2E+23 ",2023.5092402464063,False,NVIDIA A100 SXM4 40 GB,NVIDIA,GPU,2020-05-14,400.0,312000000000000.0,,,19490000000000.0,156000000000000.0,77970000000000.0,True,312000000000000.0,f_tensor16,False,False,Mixed,China,583.04,China:2023,False,6.2e+23,False,True,True,A,0.1837276535587288,False,True,False,False,6.2e+23,1949.4436282084414,1042.596720495979,-0.2717943267589814,False
+Falcon-180B,Technology Innovation Institute,2023-09-06,Language,180000000000.0,3.76e+24,3500000000000.0,NVIDIA A100 SXM4 40 GB,4096.0,4320.0,0.1892,3254975.428970916,10743500.868805485,BF16,True,Government,United Arab Emirates,Confident,Open weights (restricted use),,,"43,500 petaflop-days per Table 1 of the paper
+
+43500 * 1e15 * 24 * 3600 = 3.76e24
+
+
+C = 6ND = 6 FLOP/token/parameter * 3.5 trillion tokens * 180 billion parameters = 3.78*10^24 FLOP",2023.6789869952088,False,NVIDIA A100 SXM4 40 GB,NVIDIA,GPU,2020-05-14,400.0,312000000000000.0,,,19490000000000.0,156000000000000.0,77970000000000.0,True,312000000000000.0,f_tensor16,False,False,Mixed,United Arab Emirates,483.79,United Arab Emirates:2023,False,3.76e+24,False,True,True,A,0.18918515509589,False,True,True,True,3.76e+24,11467.81178771706,11466.912006711036,-3.4076706529474314e-05,True
+Amazon Titan,Amazon,2023-09-28,"Language,Image generation",200000000000.0,4.8e+24,4000000000000.0,NVIDIA A100,13760.0,1152.0,0.2696,10929327.206416875,7933464.673729055,,True,Industry,United States of America,Likely,API access,,,"trained using NVIDIA NeMo: https://blogs.nvidia.com/blog/nemo-amazon-titan/
+
+13,760 NVIDIA A100 chips (using 1,720 P4d nodes). It took 48 days to train.
+from https://importai.substack.com/p/import-ai-365-wmd-benchmark-amazon
+
+counting operations: 6*200000000000*4000000000000=4.8e+24
+
+gpu usage: 312000000000000(FLOP/s)*0.3*13760*1152*3600=5.3413281792e+24",2023.7392197125257,False,NVIDIA A100,NVIDIA,GPU,2020-03-01,400.0,312000000000000.0,,,19500000000000.0,156000000000000.0,77970000000000.0,True,312000000000000.0,f_tensor16,False,False,Industry,United States,392.89,United States:2023,False,4.8e+24,False,True,True,A,0.2695958667373396,False,True,True,True,4.8e+24,10301.598652268558,10301.440717502046,-6.658260110770221e-06,True
+FinGPT-13B,"University of California Los Angeles (UCLA),Columbia University,New York University (NYU)",2023-10-07,Language,13000000000.0,1.6e+23,76800.0,NVIDIA GeForce RTX 3090,1.0,17.25,,381.7900590727425,,FP16,False,"Academia,Academia,Academia","United States of America,United States of America,United States of America",Likely,Open weights (unrestricted),Llama 2-13B,6.532488e+17,From Llama 2-13B,2023.7638603696096,False,NVIDIA GeForce RTX 3090,NVIDIA,GPU,2020-09-01,350.0,,,,35580000000000.0,,35580000000000.0,True,35580000000000.0,f_fp16,True,False,Academia,United States,392.89,United States:2023,True,6.532488e+17,False,True,True,A,0.2956521739130435,False,True,False,False,6.532488e+17,0.007994603744237876,0.006722891369758306,-0.07524084876708675,True
+LLaVA 1.5,"University of Wisconsin Madison,Microsoft Research",2023-11-05,"Multimodal,Language,Vision",13000000000.0,7.807e+22,,NVIDIA A100,8.0,24.0,,6348.88507402357,,BF16,False,"Academia,Industry","United States of America,United States of America",Confident,Open weights (restricted use),Vicuna-13B v0,7.008768e+19,"""Due to the increased image input resolution to 336^2, the training of LLaVA-1.5 is ∼2× as long as LLaVA: ∼6 hours of pretraining and ∼20 hours of visual instruction tuning using 8× A100s.""
+26 * 3600 * 8 * 3.12e14 * 0.3 = 7.0e19
+
+Fine-tuned from Vicuna-13B (itself finetuned from LLaMa-13B), which used 7.8e22 FLOPs
+
+7.0e19 + 7.8e22",2023.843258042437,False,NVIDIA A100,NVIDIA,GPU,2020-03-01,400.0,312000000000000.0,,,19500000000000.0,156000000000000.0,77970000000000.0,True,312000000000000.0,f_tensor16,False,False,Mixed,United States,392.89,United States:2023,True,7.008768e+19,False,True,True,A,0.325,False,True,False,False,7.008768e+19,0.12457334869617873,0.11792229733013525,-0.023829207610341744,True
+SPHINX (Llama 2 13B),"Shanghai AI Lab,Chinese University of Hong Kong (CUHK),ShanghaiTech University",2023-11-13,"Vision,Language,Multimodal",19900000000.0,3.04e+22,,NVIDIA A100 SXM4 40 GB,32.0,290.0,,25391.0163573626,239188.6875340231,BF16,False,"Academia,Academia,Academia","China,Hong Kong,China",Likely,Open weights (restricted use),Llama 2-13B,4.00000000001e+21,"""The pre-training time is around 125 hours on 32 A100 GPUs with a 7B
+language model and about twice the time with a 13B language model... The fine-tuning takes about 38 hours with 16 A100 GPUs with a 13B
+language model.""
+
+((125*2 * 32) + (38 * 16)) * 3.12e14 * 3600 * 0.3 = 2.9e21
+
+Component vision encoders were initialized from pre-trained:
+- CLIP ViT: 1.5e22 FLOPs for L/14@336
+- ConvNeXt V2: 6.8e21 FLOPs for largest
+- DinoV2: 7.42e+21 FLOPs for largest
+- Q-former: 1.2e21 FLOPs for largest
+
+(Based on full parameter count, SPHINX probably uses largest models)
+
+Sum: 3.04e22 FLOPs",2023.8651608487337,False,NVIDIA A100 SXM4 40 GB,NVIDIA,GPU,2020-05-14,400.0,312000000000000.0,,,19490000000000.0,156000000000000.0,77970000000000.0,True,312000000000000.0,f_tensor16,False,False,Academia,China,583.04,China:2023,True,4.00000000001e+21,False,True,True,A,0.3837557716877655,False,True,False,False,4.00000000001e+21,6.0468143839685835,6.693322253599268,0.04411509735779716,True
+Nemotron-3-8B,Nvidia,2023-11-15,Language,8000000000.0,1.8e+23,3800000000000.0,NVIDIA A100,1024.0,456.0,0.3473,812476.3359553809,214467.02013524104,,False,Industry,United States of America,Confident,Open weights (restricted use),,,"https://huggingface.co/nvidia/nemotron-3-8b-base-4k
+
+""This model was trained on a dataset containing 3.8 Trillion tokens of text""
+
+8 billion * 3.8 trillion * 6 = 1.8e23
+
+Also, using the hardware method: ""1,024 A100s were used for 19 days to train the model.""
+
+19*1024 * 312 trillion * 24 * 3600 * 0.3 = 1.57e23",2023.870636550308,False,NVIDIA A100,NVIDIA,GPU,2020-03-01,400.0,312000000000000.0,,,19500000000000.0,156000000000000.0,77970000000000.0,True,312000000000000.0,f_tensor16,False,False,Industry,United States,392.89,United States:2023,False,1.8e+23,False,True,True,A,0.3432026329847053,False,True,False,False,1.8e+23,304.42661206253246,300.83505560171204,-0.005154172297433319,True
+Gemini 1.0 Ultra,Google DeepMind,2023-12-06,"Multimodal,Language,Vision",,5.0000000001e+25,,Google TPU v4,57000.0,2400.0,,38423900.11232233,30719419.93534952,,True,Industry,United States of America,Speculative,API access,,,"This number is an estimate based on limited evidence. In particular, we combine information about the performance of Gemini Ultra on various benchmarks compared to other models, and guesstimates about the hardware setup used for training to arrive at our estimate. Our reasoning and calculations are detailed in this Colab notebook.
+https://colab.research.google.com/drive/1sfG91UfiYpEYnj_xB5YRy07T5dv-9O_c",2023.9281314168377,False,Google TPU v4,Google,TPU,2021-05-20,340.0,275000000000000.0,,,,,,True,275000000000000.0,f_tensor16,False,True,Industry,United States,392.89,United States:2023,False,5.0000000001e+25,False,True,True,A,0.3691889656875775,False,True,True,True,5.0000000001e+25,43620.05694360957,46568.42704301492,0.02840534068291575,True
+OpenVLA,"Stanford University,University of California (UC) Berkeley,Toyota Research Institute,Google DeepMind,Massachusetts Institute of Technology (MIT),Physical Intelligence",2024-06-13,"Robotics,Vision,Language",7188100000.0,1.1e+23,,NVIDIA A100,64.0,336.0,,50541.724821294745,,BF16,False,"Academia,Academia,Industry,Industry,Academia,Industry","United States of America,United States of America,United States of America,United States of America,United States of America,United States of America",Confident,Open weights (unrestricted),Llama 2-7B,9.66e+21,"Majority of compute is from VLA pre-training embedded in Prismatic-7B and it's constituent models. 
+
+The fine-tuning compute used in this paper is ""64 A100 GPUs for 14 days, or a total of 21,500 A100-hours""
+21500 * 3600 * 3.12e14 * 0.4 = 9.66e21
+
+Prismatic-7B training took ""less than 9 hours"" on 8 A100s: 9 * 3600 * 8 * 3.12e14 * 0.4 = 3.23e19
+
+Add in the pre-trained components:
+- DinoV2 = 7.42e21, per our database
+- The SigLIP model in question is SoViT-400m/14 from the cited Alabdulmohsin et al., 2023) and ""is pretrained on 40 billion examples, which amounts to 9T GFLOPs and 230K TPUv3 core-hours"" = 9e21
+- Llama 2-7B = 8.4e22, per our database
+
+Total
+9.66e21 + 3.23e19 + 7.42e21 + 9e21 + 8.4e22 = 1.10e23",2024.4490075290896,False,NVIDIA A100,NVIDIA,GPU,2020-03-01,400.0,312000000000000.0,,,19500000000000.0,156000000000000.0,77970000000000.0,True,312000000000000.0,f_tensor16,False,False,Mixed,United States,383.78,United States:2024,True,9.66e+21,False,True,True,A,0.3999454683048433,False,True,False,False,9.66e+21,13.958244691673954,16.141781227246238,0.0631206495815206,True
+Llama 3.1-405B,Meta AI,2024-07-23,Language,405000000000.0,3.8e+25,15600000000000.0,NVIDIA H100 SXM5 80GB,16384.0,2142.0,0.4042,22622532.159299143,52885433.95402246,BF16,True,Industry,United States of America,Confident,Open weights (restricted use),,,"Stated in paper.
+
+Also, 6 * 405B * 15.6T training tokens = 3.8e25",2024.558521560575,False,NVIDIA H100 SXM5 80GB,NVIDIA,GPU,2022-09-20,700.0,989500000000000.0,1979000000000000.0,,66910000000000.0,494700000000000.0,133800000000000.0,True,989500000000000.0,f_tensor16,False,False,Industry,United States,383.78,United States:2024,False,3.8e+25,False,True,True,A,0.3039666180416733,False,True,True,True,3.8e+25,40076.217584725535,30138.130438226766,-0.12377041766375084,True
+Movie Gen Video,Meta AI,2024-10-04,"Video,Vision",30000000000.0,1.65e+24,3400000000.0,NVIDIA H100 SXM5 80GB,6144.0,331.0,,8469669.524206791,,,False,Industry,United States of America,Confident,Unreleased,,,"Model size = 30B
+Broken down by training stage (table 3):
+256px T2I: samples seen = 1.94E9; sample token length = 256; flops = 6ND = 8.94E22
+256px T2I/V: samples seen = 3.95E8; sample token length = 8192; flops = 6ND = 5.82E23
+768px T2I/V: samples seen = 7.38E7; sample token length = 73,728; flops = 6ND = 9.79E23
+Total flops = 1.65E24",2024.758384668036,False,NVIDIA H100 SXM5 80GB,NVIDIA,GPU,2022-09-20,700.0,989500000000000.0,1979000000000000.0,,66910000000000.0,494700000000000.0,133800000000000.0,True,989500000000000.0,f_tensor16,False,False,Industry,United States,383.78,United States:2024,False,1.65e+24,False,True,True,A,0.2277647147176945,False,True,False,False,1.65e+24,2305.433757198141,1518.1155187264785,-0.18144782820065553,True
+Grok 3,xAI,2025-02-17,"Language,Vision,Multimodal",3000000000000.0,3.5000000000000006e+26,,NVIDIA H100 SXM5 80GB,80000.0,2160.0,,109948656.20196916,217835545.5267339,,True,Industry,United States of America,Likely,API access,,,"Estimate based on a cluster of 80,000 H100s per the xai website and an estimated training time of approximately three months.
+
+Full estimate here: https://docs.google.com/document/d/1MIUFviULJ3YI_XjyzL8cwG0cBRANKNxVEB4DrUcFiNs/edit?usp=sharing",2025.1286789869955,False,NVIDIA H100 SXM5 80GB,NVIDIA,GPU,2022-09-20,700.0,989500000000000.0,1979000000000000.0,,66910000000000.0,494700000000000.0,133800000000000.0,True,989500000000000.0,f_tensor16,False,False,Industry,United States,384.4,United States:2025,False,3.5000000000000006e+26,False,True,True,A,0.5685988891592172,False,True,True,True,3.5000000000000006e+26,196037.7874201584,320803.5812297352,0.21389941559798176,False
+EXAONE Deep 32B,LG AI Research,2025-03-16,Language,32000000000.0,1.26e+24,12000000000.0,NVIDIA H100 SXM5 80GB,512.0,2160.0,0.3156,703248.4282353076,,BF16,False,Industry,South Korea,Confident,Open weights (non-commercial),EXAONE 3.5 32B,7.04e+21,"1.25 × 10^24 (base model reported training compute) + 7.04 × 10^21 (finetune compute) = 1.26 × 10^24 FLOP
+
+Table 1",2025.202600958248,False,NVIDIA H100 SXM5 80GB,NVIDIA,GPU,2022-09-20,700.0,989500000000000.0,1979000000000000.0,,66910000000000.0,494700000000000.0,133800000000000.0,True,989500000000000.0,f_tensor16,False,False,Industry,South Korea,417.06,South Korea:2025,True,7.04e+21,False,True,True,A,0.0017870250802146,False,True,False,False,7.04e+21,1261.3320742516764,7.142053394065123,-2.2470063468317347,False
+Diffusion Renderer,"Nvidia,University of Toronto,Vector Institute,University of Illinois Urbana-Champaign (UIUC)",2025-03-22,Video,1100000000.0,,,NVIDIA A100,32.0,48.0,,25112.65961109272,,FP16,False,"Industry,Academia,Academia,Academia","United States of America,Canada,Canada,United States of America",Confident,Open weights (non-commercial),Stable Video Diffusion,1.2934287e+20,,2025.219028062971,False,NVIDIA A100,NVIDIA,GPU,2020-03-01,400.0,312000000000000.0,,,19500000000000.0,156000000000000.0,77970000000000.0,True,312000000000000.0,f_tensor16,False,False,Mixed,United States,384.4,United States:2025,True,1.2934287e+20,False,True,True,A,0.0749711517594818,False,True,False,False,1.2934287e+20,0.9982489632738357,0.21619113297176376,-0.6644009903353687,False
+EXAONE 4.0 (32B),LG AI Research,2025-07-15,Language,32000000000.0,2.69000000000001e+24,14000000000000.0,NVIDIA H200 SXM,512.0,3192.0,,701356.0100875632,,FP8,False,Industry,South Korea,Confident,Open weights (non-commercial),,,"Reported in Table 2.
+
+from communication with the authors:
+""EXAONE 4.0 32B: NVIDIA H200 GPUs x 512 EA for 19 weeks (FP8 mode training)""",2025.5338809034909,False,NVIDIA H200 SXM,NVIDIA,GPU,2024-11-18,700.0,989500000000000.0,1979000000000000.0,,66910000000000.0,494500000000000.0,,True,1979000000000000.0,f_fp8,False,False,Industry,South Korea,417.06,South Korea:2025,False,2.69000000000001e+24,False,True,True,A,0.2310314699675197,False,True,False,False,2.69000000000001e+24,1861.1707536891026,1237.0703494544305,-0.17739182174290188,True
+Olmo 3,Allen Institute for AI,2025-11-20,Language,32000000000.0,1.1e+24,5500000000000.0,NVIDIA H100 SXM5 80GB,1024.0,1344.0,,1398719.3115551586,,,False,Research collective,United States of America,Confident,Open weights (unrestricted),,,6*3.2e10*5.5e12=1.1e24,2025.884325804244,False,NVIDIA H100 SXM5 80GB,NVIDIA,GPU,2022-09-20,700.0,989500000000000.0,1979000000000000.0,,66910000000000.0,494700000000000.0,133800000000000.0,True,989500000000000.0,f_tensor16,False,False,Mixed,United States,384.4,United States:2025,False,1.1e+24,False,True,True,A,0.2243753588439193,False,True,False,False,1.1e+24,1572.2790408981782,1008.7375557160026,-0.19275143505128206,True
+K-EXAONE,LG AI Research,2025-12-31,Language,236000000000.0,1.52e+24,11000000000000.0,NVIDIA B200 GPUs,512.0,3240.0,,,,,False,Industry,South Korea,Confident,Open weights (restricted use),,,,2025.996577686516,False,NVIDIA B200,NVIDIA,GPU,2024-11-15,1000.0,2250000000000000.0,4500000000000000.0,9000000000000000.0,62080000000000.0,1125000000000000.0,2250000000000000.0,True,2250000000000000.0,f_tensor16,False,False,Industry,South Korea,417.06,South Korea:2025,False,1.52e+24,False,True,True,A,0.1131210943453741,False,True,False,False,1.52e+24,2704.0355506456635,889.8077202715693,-0.48271622757393473,False
+Solar Open2 250B,Upstage,2026-06-28,Language,250300000000.0,1.05e+24,11000000000000.0,"NVIDIA B200,NVIDIA H200",1656.0,1900.0,,3215623.4309682944,,,False,Industry,South Korea,Likely,Open weights (unrestricted),,,"Per Upstage in direct correspondence, Solar Open2 250B was trained on 11T tokens. At 14.7B parameters, this implies 9.7e23 FLOP. Solar Open2 250B was trained using 1,656× B200 and 720× H200 for 1900 hours, costing $32 million (implying a cost of $7/GPU-hour)
+
+Tech report clarifies 11.9T pretraining tokens, for 1.05e24 FLOP, with additional post-training.
+
+",2026.4873374401093,True,NVIDIA B200,NVIDIA,GPU,2024-11-15,1000.0,2250000000000000.0,4500000000000000.0,9000000000000000.0,62080000000000.0,1125000000000000.0,2250000000000000.0,True,2250000000000000.0,f_tensor16,False,False,Industry,South Korea,417.06,South Korea:2025,False,1.05e+24,False,True,True,A,0.0411993483440216,False,True,False,False,1.05e+24,5110.56772548959,608.6439973358007,-0.924105804746061,False

@@ -1,0 +1,12 @@
+model,pub_date,flop,confidence
+GNMT,2016-09-26,6.620000000001e+21,Likely
+JFT,2017-07-10,8.43e+20,Confident
+ResNeXt-101 32x48d,2018-05-02,8.74395e+21,Confident
+AlphaStar,2019-10-30,1.0773400001e+23,Confident
+GPT-3 175B (davinci),2020-05-28,3.14e+23,Confident
+ERNIE 3.0 Titan,2021-12-23,1.0421e+24,Confident
+GPT-3.5 (davinci-002),2022-03-15,2.578e+24,Speculative
+Gemini 1.0 Ultra,2023-12-06,5.0000000001e+25,Speculative
+Llama 3.1-405B,2024-07-23,3.8e+25,Confident
+Grok 4,2025-07-09,5.0000000000001e+26,Speculative
+GPT-6 Astra,2026-09-03,9.4e+26,Likely

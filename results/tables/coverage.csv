@@ -1,0 +1,18 @@
+field,n_models,pct_of_models
+flop,471,49.8
+params,635,67.2
+dataset_size,556,58.8
+hardware_raw,363,38.4
+chips,244,25.8
+hours,223,23.6
+mfu_reported,36,3.8
+epoch_power_w,219,23.2
+cost_usd2023,180,19.0
+hardware matched (TDP known),356,37.7
+Method A eligible,153,16.2
+Method B eligible,280,29.6
+Both A and B,143,15.1
+"Both, compute not hardware-derived",53,5.6
+Fine-tunes,143,15.1
+Inconsistent records (MFU>1),7,0.7
+Any method,290,30.7

@@ -1,0 +1,16 @@
+# Public code release: publish only code, public input data, validation set and results.
+# Everything else (manuscript, drafts, Kaggle build folder) stays local.
+/*
+!/.gitignore
+!/README.md
+!/LICENSE
+!/requirements.txt
+!/src/
+!/tests/
+!/data/
+!/results/
+!/notebooks/
+__pycache__/
+*.pyc
+.pytest_cache/
+!/.gitattributes
